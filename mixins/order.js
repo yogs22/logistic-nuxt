@@ -1,3 +1,4 @@
+import { mapGetters } from 'vuex'
 import global from '~/mixins/global'
 
 export default {
@@ -44,10 +45,13 @@ export default {
             // store orders response
             this.orders = response.data.data
           }
-
-          // remove table busy status
+          // disabling table busy status
           this.isBusy = false
         })
+    },
+    // function to show spesific order item
+    showOrder(trackingNumber) {
+      this.$store.commit('setOrder', this.orders.find(order => order.TrackingNumber === trackingNumber))
     },
     // function to create order data
     async submitOrder(event) {
@@ -55,20 +59,19 @@ export default {
       const _btn = document.getElementById('btn-submit')
       this.setProcessButton(_btn, true, 'Submiting ...')
 
-      try {
-        // submit to create order endpoint
-        this.$axios.post('/orders', this.form)
-          .then((response) => {
-            // action after success hit to order endpoint
-            this.setProcessButton(_btn, false, 'Submit')
-            this.$toast.success('Order successfully created')
-            this.$router.push('/')
-          })
-      } catch (e) {
-        // return error message, when there's any error
-        this.setProcessButton(_btn, false, 'Submit')
-        this.$toast.error(e.response.data.error)
-      }
+      // submit to create order endpoint
+      this.$axios.post('/orders', this.form)
+        .then((response) => {
+          // action after success hit to order endpoint
+          this.setProcessButton(_btn, false, 'Submit')
+          this.$toast.success('Order successfully created')
+          this.$router.push('/')
+        })
+        .catch((e) => {
+          // throw error response message
+          this.setProcessButton(_btn, false, 'Submit')
+          this.$toast.error(e.response.data.error)
+        })
     }
   }
 }

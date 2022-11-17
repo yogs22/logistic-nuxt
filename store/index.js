@@ -1,12 +1,12 @@
 // holds your root state
 export const state = () => ({
-  username: null,
+  order: null,
 })
 
 // contains your mutations
 export const mutations = {
-  setUsername (state, value) {
-    state.username = value
+  setOrder (state, value) {
+    state.order = value
   }
 }
 
@@ -14,7 +14,7 @@ export const getters = {
   isAuthenticated (state) {
     return state.auth.loggedIn
   },
-  getUsername (state) {
-    return state.username
+  getOrder (state) {
+    return state.order
   }
 }

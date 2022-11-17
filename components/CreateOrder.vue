@@ -196,6 +196,7 @@
                 id="paymentType"
                 v-model="form.paymentType"
                 :options="paymentTypes"
+                required
               ></b-form-select>
           </b-form-group>
 

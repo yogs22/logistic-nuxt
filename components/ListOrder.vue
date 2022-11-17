@@ -15,10 +15,15 @@
                 <Spinner />
               </div>
             </template>
+            <template #cell(ConsigneeName)="data">
+              <b-link href="javascript:void(0)" v-b-modal.modal-order @click="showOrder(data.item.TrackingNumber)">{{ data.item.ConsigneeName }}</b-link>
+            </template>
           </b-table>
         </div>
       </div>
     </div>
+    <!-- Modal for detail order -->
+    <ModalOrder />
   </main>
 </template>
 
@@ -31,7 +36,7 @@ export default {
   data () {
     return {
       fields: [
-        'ConsigneeName', 'ConsigneeAddress', 'ConsigneeCity', 'ConsigneeCountry', 'ConsigneePostalCode', 'ConsigneeProvince', 'ConsigneeNumber', 'Height', 'Weight', 'Length', 'Width', 'PaymentType'
+        'ConsigneeName','ConsigneeCountry', 'ConsigneeCity', 'ConsigneeAddress', 'ConsigneeNumber', 'PaymentType'
       ],
       orders: [],
       isBusy: true,
