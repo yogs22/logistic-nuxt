@@ -1,0 +1,36 @@
+@media (max-width:1025px){
+  body {
+    padding-bottom: 100px;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  table {
+    white-space: nowrap;
+  }
+
+  .navbar-light {
+    display: block !important;
+    box-shadow: 0 0 15px 0 rgb(0 0 0 / 5%);
+  }
+
+  .nav-justified .nav-item, .nav-justified > .nav-link {
+    flex-basis: auto;
+  }
+
+  .overview main.main-wrapper{
+      width: 100%;
+      margin-left: 0px;
+      padding: 15px;
+  }
+
+  .overview .latest-transaction .main-content-table {
+    padding: 0.5rem;
+  }
+}
+
+.nav-link:focus, .nav-link:hover {
+  color: #ea394d;
+}

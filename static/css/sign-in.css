@@ -1,0 +1,58 @@
+/* Sign-in */
+.login-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.sign-in .img-fluid{
+    max-width: 100%;
+    height: auto;
+}
+
+.sign-in .bg-blue{
+    background-color: #1A1640;
+}
+
+.sign-in input[type="text"],
+.sign-in input[type="password"]{
+    border: 1px solid #0C145A;
+    padding: 1.625rem;
+    color: #0C145A;
+}
+
+.sign-in input[type="password"]:focus-within,
+.sign-in input[type="text"]:focus-within{
+    color: #0C145A;
+}
+
+.sign-in input[type="password"]::placeholder,
+.sign-in input[type="text"]::placeholder{
+    color: #CCD0DD;
+}
+
+.sign-in .btn-sign-in{
+    padding: 0.75rem;
+    background-color: #ea394d;
+}
+
+.sign-in .btn-sign-up{
+    padding: 0.75rem;
+    background-color: #E7EAF5;
+}
+
+
+.sign-in .button-group{
+    width: 100%;
+}
+
+@media (min-width: 992px){
+    .sign-in .container,
+    .sign-in input[type="password"],
+    .sign-in input[type="text"]{
+        max-width: 437px;
+    }
+    }
+
+/*  */

@@ -1,0 +1,134 @@
+body {
+    background-color: #FBFCFD;
+}
+
+.img-icon {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+.col-game a {
+  text-decoration: none;
+  color: #0C145A;
+}
+
+.col-game a:hover {
+  color: #0c145a;
+}
+
+.col-game .img-game {
+  width: 90px;
+  height: 90px;
+  border-radius: 15px;
+  display: block;
+  margin: auto;
+}
+
+.overview main.main-wrapper{
+    margin-left: 300px;
+    height: 100%;
+    margin-right: auto;
+    position: relative;
+    padding: 50px 50px 20px 0px;
+}
+
+.overview main .main-content{
+    max-width: 100%;
+}
+
+.overview .latest-transaction .main-content-table{
+    background-color: #FFFFFF;
+    padding: 1.25rem 1.875rem;
+    border-radius: 1rem;
+    max-width: 100%;
+    box-shadow: 0 0 15px 0 rgb(0 0 0 / 5%);
+}
+
+.overview .latest-transaction .game-title-header{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.overview .latest-transaction .game-title{
+    white-space: nowrap;
+    width: 135px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.overview .table>:not(caption)>*>*{
+    padding: 10px 15px;
+}
+
+.overview .latest-transaction table thead tr th{
+    font-weight: 400;
+}
+
+.overview .latest-transaction .icon-status{
+    margin-right: 4px;
+    margin-top: 3px;
+    font-size: 11px;
+}
+
+.overview .latest-transaction .icon-status.menunggu-pembayaran:after{
+    content: '⌛';
+}
+
+.overview .latest-transaction .icon-status.dalam-proses:after{
+    content: '⌛';
+}
+
+.overview .latest-transaction .icon-status.sukses:after{
+    content: '✅';
+}
+
+.overview .latest-transaction .icon-status.gagal:after{
+    content: '❌';
+}
+
+.overview .latest-transaction .item-list {
+    transition: 0.1s ease;
+}
+
+.overview .latest-transaction .item-list.active {
+    background-color: #ea394d;
+    color: #fff;
+}
+
+.overview .latest-transaction .item-list:not(.active):hover {
+    background-color: #f4f4f4;
+}
+
+.overview .latest-transaction .item-list.trouble {
+    background-color: #e4e4e4;
+    cursor: not-allowed;
+}
+
+.overview .latest-transaction .item-list.trouble .trouble-badge {
+    text-align: right;
+    color: red;
+}
+
+.overview .top-up-categories .categories-card{
+    background-color: #FFFFFF;
+    padding: 1.875rem;
+    border-radius: 1rem;
+}
+
+.card-information {
+    max-height: 87vh;
+    overflow: auto;
+}
+
+.card-information p {
+  margin-bottom: 0px;
+}
+
+.kotak {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
