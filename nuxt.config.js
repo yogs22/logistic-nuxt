@@ -26,7 +26,6 @@ export default {
     '~/static/css/utilities.css',
     '~/static/css/sidebar.css',
     '~/static/css/overview.css',
-    '~/static/css/transactions-detail.css',
     '~/static/css/sign-in.css',
     '~/static/css/responsive.css'
   ],
@@ -48,11 +47,12 @@ export default {
     'bootstrap-vue/nuxt',
     '@nuxtjs/axios',
     '@nuxtjs/auth',
-    '@nuxtjs/toast'
+    '@nuxtjs/toast',
+    '@nuxtjs/dotenv',
   ],
 
   axios: {
-    baseURL: 'https://fe-screening.onrender.com'
+    baseURL: process.env.baseURL
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

@@ -9,7 +9,7 @@
           <div class="float-md-start mb-3">
             <nuxt-link to="create" class="btn btn-danger">+ Create Order</nuxt-link>
           </div>
-          <b-table border :busy="isBusy" :fields="fields" :items="orders" show-empty>
+          <b-table :busy="isBusy" :fields="fields" :items="orders" show-empty>
             <template #table-busy>
               <div class="text-center text-danger my-2">
                 <Spinner />
