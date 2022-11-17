@@ -4,8 +4,11 @@ export default {
   mixins: [global],
   data() {
     return {
+      // accommodate orders data
       orders: [],
+      // set busy/loading status
       isBusy: true,
+      // form payload to create order
       form: {
         consigneeName: null,
         consigneeAddress: null,
@@ -21,6 +24,7 @@ export default {
         width: null,
         paymentType: null
       },
+      // payment type select
       paymentTypes: [
         { text: 'Select Payment Type', value: null },
         { text: 'COD', value: 'cod' },
@@ -29,32 +33,41 @@ export default {
     }
   },
   methods: {
+    // get list orders data
     async getOrders() {
+      // set table busy status
       this.isBusy = true
 
       await this.$axios.get('/orders')
         .then((response) => {
           if (response.data.data) {
+            // store orders response
             this.orders = response.data.data
           }
 
+          // remove table busy status
           this.isBusy = false
         })
     },
+    // function to create order data
     async submitOrder(event) {
+      // change to disabled during processing request
       const _btn = document.getElementById('btn-submit')
       this.setProcessButton(_btn, true, 'Submiting ...')
 
       try {
+        // submit to create order endpoint
         this.$axios.post('/orders', this.form)
           .then((response) => {
+            // action after success hit to order endpoint
             this.setProcessButton(_btn, false, 'Submit')
             this.$toast.success('Order successfully created')
             this.$router.push('/')
           })
       } catch (e) {
+        // return error message, when there's any error
         this.setProcessButton(_btn, false, 'Submit')
-        console.log(e)
+        this.$toast.error(e.response.data.error)
       }
     }
   }

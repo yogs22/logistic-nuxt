@@ -162,13 +162,8 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 export default {
-  name: 'MenuPage',
-  computed: {
-    ...mapGetters(['getUsername'])
-  },
+  name: 'Sidebar',
   methods: {
     async logout () {
       await this.$auth.logout()

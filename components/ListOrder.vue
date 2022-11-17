@@ -5,11 +5,11 @@
         Order List
       </h2>
       <div class="latest-transaction">
-        <div class="main-content main-content-table overflow-auto">
+        <div class="main-content main-content-table">
           <div class="float-md-start mb-3">
             <nuxt-link to="create" class="btn btn-danger">+ Create Order</nuxt-link>
           </div>
-          <b-table :busy="isBusy" :fields="fields" :items="orders" show-empty>
+          <b-table responsive :busy="isBusy" :fields="fields" :items="orders" show-empty>
             <template #table-busy>
               <div class="text-center text-danger my-2">
                 <Spinner />
