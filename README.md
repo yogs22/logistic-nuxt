@@ -23,6 +23,8 @@ For detailed explanation on how things work, check out the [documentation](https
 
 - Authentication using nuxt-auth
 - Create and read data using axios
-- Responsive interface
+- Responsive & clean interface
 - Show order detail using modal
 - Bootstrapvue for UI Library
+- using nuxt-toast for alert
+- using dotenv
