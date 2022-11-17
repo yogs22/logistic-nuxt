@@ -17,6 +17,7 @@ export default {
 
   publicRuntimeConfig: {
     siteName: 'Logistik App',
+    baseUrl: process.env.baseURL
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
