@@ -6,12 +6,12 @@
         <div class="user text-center pb-50 pe-30">
           <img src="/picture.png" width="120" height="120" class="img-fluid mb-20">
           <h2 class="fw-bold text-xl color-palette-1 m-0">
-            {{ getUsername }}
+            {{ 'Welcome 👋' }}
           </h2>
         </div>
         <div class="menus">
           <nuxt-link to="/" class="text-lg text-decoration-none">
-            <div id="dashboard" class="item mb-30" :class="{'active': isRouteActive('index') }">
+            <div id="dashboard" class="item mb-30 active">
               <svg
                 class="icon me-3"
                 width="25"
@@ -86,7 +86,7 @@
     <!-- Mobile / Tablet Menu -->
     <nav class="navbar navbar-light bg-white navbar-expand d-md-none d-lg-none d-xl-none fixed-bottom">
       <ul class="navbar-nav nav-justified w-100">
-        <li class="item nav-item text-center" :class="{'active': isRouteActive('index')}">
+        <li class="item nav-item text-center active">
           <nuxt-link to="/" class="nav-link">
             <svg
               class="icon"
@@ -131,7 +131,7 @@
         <li class="item nav-item text-center">
           <a @click="logout" class="nav-link">
             <svg
-              class="icon me-3"
+              class="icon"
               width="25"
               height="25"
               viewBox="0 0 25 25"
@@ -170,16 +170,6 @@ export default {
     ...mapGetters(['getUsername'])
   },
   methods: {
-    base64Encode (string) {
-      return Buffer.from(string).toString('base64')
-    },
-    isRouteActive (id) {
-      if (this.$route.name.includes(id)) {
-        return true
-      } else {
-        return false
-      }
-    },
     async logout () {
       await this.$auth.logout()
       this.$router.push('/login')

@@ -48,30 +48,14 @@ export default {
       try {
         this.$axios.post('/orders', this.form)
           .then((response) => {
-            this.hideModal('modal-order')
             this.setProcessButton(_btn, false, 'Submit')
-            this.resetForm()
-            document.getElementById('refresh-btn').click()
+            this.$toast.success('Order successfully created')
+            this.$router.push('/')
           })
       } catch (e) {
         this.setProcessButton(_btn, false, 'Submit')
         console.log(e)
       }
-    },
-    resetForm() {
-      this.form.consigneeName = null
-      this.form.consigneeAddress = null
-      this.form.consigneeCity = null
-      this.form.consigneeAddress = null
-      this.form.consigneeCountry = null
-      this.form.consigneePostalCode = null
-      this.form.consigneeProvince = null
-      this.form.consigneeNumber = null
-      this.form.height = null
-      this.form.weight = null
-      this.form.length = null
-      this.form.width = null
-      this.form.paymentType = null
     }
   }
 }

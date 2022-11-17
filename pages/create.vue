@@ -1,18 +1,18 @@
 <template>
   <section class="overview">
     <Sidebar />
-    <ListOrder />
+    <CreateOrder />
   </section>
 </template>
 
 <script>
 export default {
-  name: 'IndexPage',
+  name: 'CreatePage',
   middleware: 'auth',
   head () {
     return {
-      title: `Order Page - ${this.$config.siteName}`,
+      title: `Create Order - ${this.$config.siteName}`,
     }
-  }
+  },
 }
 </script>
