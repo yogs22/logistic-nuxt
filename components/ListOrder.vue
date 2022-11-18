@@ -2,7 +2,7 @@
   <main class="main-wrapper">
     <div class="ps-lg-0">
       <h2 class="text-4xl fw-bold color-palette-1 mb-30">
-        Order List
+        Orders List
       </h2>
       <div class="latest-transaction">
         <div class="main-content main-content-table">
@@ -37,9 +37,7 @@ export default {
     return {
       fields: [
         'ConsigneeName','ConsigneeCountry', 'ConsigneeCity', 'ConsigneeAddress', 'ConsigneeNumber', 'PaymentType'
-      ],
-      orders: [],
-      isBusy: true,
+      ]
     }
   },
   created () {
